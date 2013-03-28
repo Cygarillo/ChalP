@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>restSQL Release History</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+	<link href="doc.css" rel="stylesheet" type="text/css"/>
+</head> 
+<body>
+
+<div id="top">
+    <img src="top.png" alt="http://restsql.org" title="http://restsql.org" onclick="window.location ='http://restsql.org'" onmouseover="this.style.cursor='pointer'"/>
+</div>
+
+<div id="nav">
+    <div class="nav-topitem"><a class="nav-link" href="Overview.html">Overview</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="Architecture.html">Architecture</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="Concepts.html">Concepts</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="Service.html">Browse Service</a></div>
+    <div class="nav-category">HTTP API
+        <div class="nav-item"><a class="nav-link" href="ref/index.html">Reference</a></div>
+        <div class="nav-item"><a class="nav-link" href="ref/ResHttpStatus.html">Status Codes</a></div>
+        <div class="nav-item"><a class="nav-link" href="ApiExplorer.html">Explorer</a></div>
+    </div>
+    <div class="nav-category">Java API
+        <div class="nav-item"><a class="nav-link" href="../examples/java">Examples</a></div>
+        <div class="nav-item"><a class="nav-link" href="../javadoc/api/index.html">Javadoc - API</a></div>
+        <div class="nav-item"><a class="nav-link" href="../javadoc/full/index.html">Javadoc - Full</a></div>
+    </div>
+    <div class="nav-category">Configuration
+        <div class="nav-item"><a class="nav-link" href="Deployment.html">Deployment</a></div>
+        <div class="nav-item"><a class="nav-link" href="../defaults/">Default Conf</a></div>
+        <div class="nav-item"><a class="nav-link" href="../examples/">Example Conf</a></div>
+        <div class="nav-item"><a class="nav-link" href="Logging.html">Logging</a></div>
+        <div class="nav-item"><a class="nav-link" href="Security.html">Security</a></div>
+        <div class="nav-item"><a class="nav-link" href="Triggers.html">Triggers</a></div>
+    </div>
+    <div class="nav-topitem"><a class="nav-link" href="Roadmap.html">Roadmap</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="Support.html">Support</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="License.html">License</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="sponsors/Sponsors.html">Sponsors</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="ReleaseHistory.html">Release History</a></div>
+    <div class="nav-topitem"><a class="nav-link" href="Download.html">Download</a></div>
+</div>
+
+<div id="content"> 
+<h1>Release History</h1>
+
+<p class="text">Email notification of new releases (both feature and bug fixes): <a href="mailto:mark.sawers@restsql.org?subject=subscribe%20restSQL%20release%20notifications">Subscribe</a></p>
+
+<h3>0.8.5 - Dec 16, 2012</h3>
+<div class="text">restSQL 0.8.5 improves developer productivity.</div>
+<p class="text">The release adds the ability to reload a SQL Resource definition on demand (/restsql/conf/reload/{resName}) without a webapp restart. It also adds a mechanism to retrieve the SQL Resource's definition (/restsql/conf/definition/{resName}) as well as the framework's understanding of it's metadata (/restsql/conf/metadata/{resName}). See the <a href="ref/index.html">HTTP API Reference</a>.</p>
+
+<h3>0.8.4 - Nov 4, 2012</h3>
+<div class="text">restSQL 0.8.4 restores Firefox compatibility.</div>
+<p class="text">The release restores support for Firefox, which was broken in release 0.8 with the JSON encoding enhancement. Firefox appends <code>;charset=UTF-8</code> to the Content-Type header when using XMLHttpRequest.setContentType() (GitHub <a href="https://github.com/restsql/restsql/issues/27">issue 27</a>).</p>
+
+<h3>0.8.3 - Oct 25, 2012</h3>
+<div class="text">restSQL 0.8.3 adds SQL IN operator.</div>
+<p class="text">The release enables numeric, string and date column values matching a set of values in queries.
+See <a href="ref/InOperator.html">In Operator</a> for more details. Additionally the release fixes a column aliasing (GitHub <a href="https://github.com/restsql/restsql/issues/24">issue 24</a>) and a JSON serialization issue (GitHub <a href="https://github.com/restsql/restsql/issues/25">issue 25</a>).</p>
+
+<h3>0.8.2 - Oct 9, 2012</h3>
+<div class="text">restSQL 0.8.2 enables cache control response header configurability.</div>
+<p class="text">The release enables provides configurability of the Cache-Control response header at a system level and per-SQL resource override.
+See <a href="HttpConfig.html">HTTP Configuration</a> for more details. Additionally the release fixes JSON encoding, removing the improper quoting for these numeric and boolean values (GitHub <a href="https://github.com/restsql/restsql/issues/18">issue 18</a>).</p>
+
+<h3>0.8.1 - Sep 29, 2012</h3>
+<div class="text">restSQL 0.8.1 adds comparison operators.</div>
+<p class="text">The release enables &lt;, &lt;=, &gt; and &gt;= operators for numeric, string and date/time parameters on read requests.
+See <a href="ref/ComparisonOperators.html">Comparison Operators</a> for an overview and the <a href="ref/ResGetQuery.html">GET by Query</a> reference for an example.</p>
+
+<h3>0.8 - July 17, 2012</h3>
+<div class="text">restSQL 0.8 adds JSON support.</div>
+<p class="text">The release enables JSON encoding for an HTTP API request and response entity (body). restSQL previously only supported XML encoding.
+See <a href="ref/ResMediaTypes.html">Media Types</a> for an overview. All <a href="ref/index.html">HTTP API reference</a> documentation has also been updated to include JSON encoding instructions and examples.</p>
+<p class="text">The release also enables SQL functions in resource columns (MySQL only). Lastly it adds escaping for special characters values in XML encoding.</p>
+
+<h3>0.7.4 - Feb 19, 2012</h3>
+<div class="text">restSQL 0.7.4 contains a bug fix and adds Java API examples.</div>
+<p class="text">The release fixes handling date, datetime, time and timestamp data types (GitHub <a href="https://github.com/restsql/restsql/issues/7">issue 7</a>). The SDK now includes <a href="../examples/java">example code</a> using the Java API.</p>
+
+<h3>0.7.3 - Jan 16, 2012</h3>
+<div class="text">restSQL 0.7.3 release adds unlimited SQL Resource table extensions.</div>
+<p class="text">SQL Resources in previous releases were constrained to a maximum of one parent and one child extension. 0.7.3 enables an SQL Resource to join an abitrary number of tables to create a flat or hierarchical application-specific view. See the <a href="release/ReleaseNotes_0.7.3.html">release notes</a> for more detail.</p>
+
+<h3>0.7.2 - Nov 19, 2011</h3>
+<div class="text">restSQL 0.7.2 release adds SQL Resource hierarchical namespaces.</div>
+<p class="text">SQL resource namespaces may be organized into arbitrary-depth directories. The directory path is converted into dotted notation, following the Java package concept.</p>
+
+<h3>0.7.1 - Oct 23, 2011</h3>
+<div class="text">restSQL 0.7.1 release adds table aliasing.</div>
+<p class="text">Aliases may be defined for SQL Resource parent and child tables. The alias instead of the table names appear as XML element names of request and response bodies.</p>
+
+<h3>0.7 - Sept 15, 2011</h3>
+<div class="text">restSQL 0.7 release adds role-based access control.</div>
+<p class="text">The release adds resource authorization capability, ensuring users only access the SQL Resources and methods appropriate to their assigned role(s). It uses standard HTTP Basic or Digest authentication and standard JEE web app declarative security mechanisms. Credentials and role assignments are provided by a standard Realm plugin, which could be file-, RDBMS- or LDAP-based. Role to SQL Resource and request type assignments are provided via a simple configuration file.</p>
+
+<h3>0.6 - July 15, 2011</h3>
+<div class="text">restSQL 0.6 release adds PostgreSQL interoperability.</div>
+<p class="text">The release extends database interoperability from MySQL to PostgreSQL. It also includes extension mechanisms to easily develop support for other database engines. The release additionally was tested with multiple application servers to ensure interoperability with any standard JEE container.</p>
+
+<h3>0.5 - May 14, 2011</h3>
+<div class="text">restSQL 0.5 is the initial public release of the framework and Java and HTTP APIs. It interoperates with MySQL and Apache Tomcat.</div>
+
+</div>
+</body>
+</html>
